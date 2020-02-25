@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Challenge</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://webfonts.fontstand.com/WF-019178-4c0f7774869e03229cf92dfa306660b1.css"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index.scss" />
+  </head>
+  <body>
+    <div class="hero--fixed">
+      <canvas id="canv"></canvas>
+    </div>
+
+    <!-- CAROUSEL -->
+
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="carousel-caption">
+            <p>Gigi Bla Bla</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption">
+            <p>Gigi Toujours</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption">
+            <p>Gigi Spin me Round</p>
+          </div>
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <form class="survey--wrapper">
+      <fieldset>
+        <legend>How much do you love Gigi?</legend>
+        <div>
+          <label id="name-label" for="name">Name</label>
+          <input
+            type="text"
+            required
+            id="name"
+            name="user_name"
+            placeholder="Enter name here"
+          />
+        </div>
+        <div>
+          <label for="address-label">Address</label>
+          <input
+            type="Address"
+            id="address"
+            name="Address"
+            placeholder="Enter address here"
+          />
+        </div>
+        <div>
+          <label id="email-label" for="Email">Email</label>
+          <input
+            type="email"
+            required
+            id="email"
+            name="user_email"
+            placeholder="Enter email here"
+          />
+        </div>
+        <div>
+          <label id="number-label" for="phone">Phone Number</label>
+          <input
+            type="number"
+            id="number"
+            name="user_name"
+            placeholder="Enter 10 digit number"
+            min="1"
+            max="9"
+          />
+        </div>
+        <div>
+          <label id="song-label" for="song">Songs</label>
+          <input
+            type="number"
+            id="song"
+            name="song"
+            placeholder="How many songs do you know by heart?"
+          />
+        </div>
+
+        <!-- ------------------Radio Buttons-------------------------------- -->
+        <div>
+          <label for="Gender">Qualities</label>
+          <p>
+            <input type="radio" name="fan" value="giginame" checked /> I named
+            my child after Gigi<br />
+            <input type="radio" name="fan" value="beauty" />He is a beautiful
+            man<br />
+            <input type="radio" name="fan" value="who" /> Who is Gigi ?
+          </p>
+        </div>
+        <label id="love" for="date-label"
+          >How long have you been in love?</label
+        >
+        <input type="date" name="bday" />
+      </fieldset>
+      <!-- ------------------Checkboxes-------------------------------- -->
+      <fieldset id="checkbox--wrapper">
+        <label for="Gender">Check All That Apply</label>
+        <p>
+          <input type="checkbox" name="zebra" value="zebra" /> I like Zebras<br />
+          <input type="checkbox" name="high" value="high" /> I am high right
+          now<br />
+          <input type="checkbox" name="wannabehigh" value="wannabehigh" /> I
+          wanna get high<br />
+          <input type="checkbox" name="gigi" value="gigi" checked /> My name is
+          Gigi<br />
+          <input type="checkbox" name="rich" value="rich" checked /> I am
+          rich<br />
+          <input
+            type="checkbox"
+            name="wannaberich"
+            value="wannaberich"
+            checked
+          />
+          I wanna be rich<br />
+        </p>
+      </fieldset>
+
+      <!-- -----------------Dropdown menus--------------------------------- -->
+
+      <fieldset>
+        <div>
+          <label for="music">Music Taste</label>
+          <select id="dropdown">
+            <option value="techno">Techno</option>
+            <option value="right">No Techno</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <!-- --------------------Text Areas------------------------------ -->
+
+      <fieldset>
+        <div>
+          <label for="msg"></label>
+          <p>In 50 words or more explain why you love Gigi</p>
+          <textarea
+            id="msg"
+            name="user_message"
+            rows="4"
+            cols="50"
+            placeholder="Enter Text Here"
+          ></textarea>
+        </div>
+      </fieldset>
+
+      <div id="submitbutton">
+        <button type="submit" id="submit">Send your love</button>
+      </div>
+    </form>
+
+    <script src="index.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
